@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAANJSAKHI - Premium Women's Apparel | Empowering Women Through Fashion</title>
+    <meta name="description" content="SAANJSAKHI - 100% women-owned enterprise offering premium blouses, gowns, sarees, kurtis & lehengas. Empowering 67+ women across Maharashtra.">
+    <meta name="keywords" content="women apparel, sarees, kurtis, blouses, gowns, lehengas, women empowerment, Kolhapur, Islampur, Mumbai">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B4789;
+            --secondary: #D4A5D4;
+            --accent: #E91E63;
+            --dark: #2C1B47;
+            --light: #F8F4F9;
+            --white: #FFFFFF;
+            --text: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            background: linear-gradient(45deg, var(--white), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 3px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(139, 71, 137, 0.95) 0%, rgba(44, 27, 71, 0.95) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23D4A5D4" width="1200" height="600"/><path fill="%238B4789" opacity="0.3" d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 180px 3rem 120px;
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(233, 30, 99, 0.2) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 5px 20px rgba(233, 30, 99, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(233, 30, 99, 0.6);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(139, 71, 137, 0.3);
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        /* Products Section */
+        .products {
+            background: var(--light);
+            padding: 100px 3rem;
+        }
+        
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(139, 71, 137, 0.3);
+        }
+        
+        .product-image {
+            height: 280px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+        
+        .product-content {
+            padding: 2rem;
+        }
+        
+        .product-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .product-description {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .product-capacity {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        /* Locations Section */
+        .locations {
+            padding: 100px 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .location-card {
+            background: var(--white);
+            border: 3px solid var(--secondary);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .location-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .location-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(139, 71, 137, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .location-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .location-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .location-info {
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+        
+        .location-info p {
+            margin-bottom: 0.8rem;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .location-info strong {
+            color: var(--dark);
+            min-width: 80px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: var(--white);
+            padding: 100px 3rem;
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-intro {
+            font-size: 1.3rem;
+            margin-bottom: 4rem;
+            opacity: 0.95;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+        
+        .contact-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+        
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-card a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        .contact-card a:hover {
+            color: var(--accent);
+        }
+        
+        .business-info {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .business-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+            50% { transform: translate(-30%, -30%) rotate(180deg); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero h1 { font-size: 3rem; }
+            .hero .tagline { font-size: 1.2rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; }
+            nav { padding: 0 1.5rem; }
+            .nav-links { display: none; }
+            .mobile-menu { display: flex; }
+            .section-title { font-size: 2.2rem; }
+        }
+        
+        @media (max-width: 640px) {
+            .hero { padding: 140px 1.5rem 80px; }
+            .hero h1 { font-size: 2.2rem; }
+            .about, .products, .locations, .contact { padding: 60px 1.5rem; }
+            .logo { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">SAANJSAKHI</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>SAANJSAKHI</h1>
+            <p class="tagline">Empowering Women Through Fashion & Entrepreneurship</p>
+            <p class="subtitle">Premium Women's Apparel | 100% Women-Owned Enterprise</p>
+            <div class="cta-buttons">
+                <a href="#products" class="btn btn-primary">Explore Collection</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="section-title">Our Story</h2>
+        <p class="section-subtitle">Building Dreams, One Stitch at a Time</p>
+        
+        <div class="about-grid">
+            <div class="about-text">
+                <p><strong class="highlight">SAANJSAKHI</strong> is more than just a fashion brand - it's a movement dedicated to empowering women through entrepreneurship and quality apparel.</p>
+                
+                <p>Established in <strong>April 2022</strong>, we specialize in manufacturing and trading premium women's clothing including blouses, gowns, sarees, kurtis, and lehengas that celebrate Indian culture while embracing modern design.</p>
+                
+                <p>Our mission is to create <strong>sustainable employment opportunities</strong> for women while delivering exceptional fashion that makes every woman feel confident and beautiful.</p>
+                
+                <p><strong>Udyam Registration:</strong> UDYAM-MH-19-0389920<br>
+                <strong>Registered under:</strong> Prime Minister's Employment Generation Programme (PMEGP)</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">67+</div>
+                    <div class="stat-label">Women Employed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">42K+</div>
+                    <div class="stat-label">Annual Production</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">₹2.5Cr+</div>
+                    <div class="stat-label">Annual Turnover</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="products-container">
+            <h2 class="section-title">Our Collection</h2>
+            <p class="section-subtitle">Crafted with Love, Designed for You</p>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">👚</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Blouses & Tops</h3>
+                        <p class="product-description">Elegant and contemporary designs perfect for every occasion. From traditional to modern styles, our collection offers versatility and comfort.</p>
+                        <p class="product-capacity">📊 24,000+ pieces annually</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">👗</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Gowns & Lehengas</h3>
+                        <p class="product-description">Premium ethnic wear for weddings, festivals, and special celebrations. Exquisite craftsmanship meets timeless elegance.</p>
+                        <p class="product-capacity">📊 6,000+ pieces annually</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">🥻</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Sarees</h3>
+                        <p class="product-description">Traditional elegance meets modern style. Wide variety of fabrics including cotton, silk, and synthetic blends.</p>
+                        <p class="product-capacity">📊 Part of 12,000+ pieces collection</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">👘</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Kurtis</h3>
+                        <p class="product-description">Comfortable daily wear and office attire. Perfect blend of style and comfort for the modern woman.</p>
+                        <p class="product-capacity">📊 12,000+ pieces annually</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations" id="locations">
+        <h2 class="section-title">Visit Our Stores</h2>
+        <p class="section-subtitle">Experience Fashion, Empower Women</p>
+        
+        <div class="location-grid">
+            <div class="location-card">
+                <div class="location-icon">📍</div>
+                <h3 class="location-title">Kolhapur Showroom</h3>
+                <div class="location-info">
+                    <p><strong>Location:</strong> Shahupuri/Station Road Area</p>
+                    <p><strong>City:</strong> Kolhapur, Maharashtra</p>
+                    <p><strong>Type:</strong> Premium Retail Showroom</p>
+                    <p><strong>Services:</strong> Complete women's apparel collection</p>
+                </div>
+            </div>
+            
+            <div class="location-card">
+                <div class="location-icon">🏭</div>
+                <h3 class="location-title">Islampur Unit</h3>
+                <div class="location-info">
+                    <p><strong>Location:</strong> Near Manufacturing Unit</p>
+                    <p><strong>City:</strong> Islampur, Sangli - 415409</p>
+                    <p><strong>Type:</strong> Retail Shop + Manufacturing</p>
+                    <p><strong>Services:</strong> Direct factory prices, custom orders</p>
+                </div>
+            </div>
+            
+            <div class="location-card">
+                <div class="location-icon">🎪</div>
+                <h3 class="location-title">Mumbai Exhibitions</h3>
+                <div class="location-info">
+                    <p><strong>Location:</strong> Various Exhibition Venues</p>
+                    <p><strong>City:</strong> Mumbai, Maharashtra</p>
+                    <p><strong>Type:</strong> Seasonal Fashion Exhibitions</p>
+                    <p><strong>Services:</strong> Premium collections, exclusive designs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2>Get In Touch</h2>
+            <p class="contact-intro">We'd love to hear from you! Contact us for orders, inquiries, or partnership opportunities.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>📧 Email Us</h3>
+                    <a href="mailto:saanjsakhi22@gmail.com">saanjsakhi22@gmail.com</a>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>📱 Call Us</h3>
+                    <a href="tel:+919167009008">+91 91670 09008</a>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Ms. Sonali Rahul Kotulkar</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>📍 Visit Us</h3>
+                    <p>Room No. 3, Parvati Sadan<br>Veer Sawarkar Marg, Prabhadevi<br>Mumbai - 400025, Maharashtra</p>
+                </div>
+            </div>
+            
+            <div class="business-info">
+                <p><strong>🏦 Bank Details:</strong> IDBI Bank | Account No: 05011040000434</p>
+                <p><strong>📋 Udyam Registration:</strong> UDYAM-MH-19-0389920</p>
+                <p><strong>🏅 Registered Under:</strong> Prime Minister's Employment Generation Programme (PMEGP)</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">SAANJSAKHI</div>
+            <p class="footer-text">&copy; 2025 SAANJSAKHI - Empowering Women Through Fashion. All Rights Reserved.</p>
+            <p class="footer-text">100% Women-Owned Enterprise | Registered under PMEGP | Ministry of MSME, Government of India</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+    </script>
+</body>
+</html>
